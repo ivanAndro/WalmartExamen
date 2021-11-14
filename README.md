@@ -1,5 +1,5 @@
 # Walmart
-_Repositorio de exámen_
+_Repositorio de examen_
 ## Construido con
 * SQL Server
 * .Net Core 5
