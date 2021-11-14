@@ -66,6 +66,7 @@ namespace Api.CRUDPersonas.Controllers
         /// <response code="204">No hubo resultados</response>
         [HttpGet]
         [Route("Buscar")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Persona>))]
         public IActionResult GetBySearch(string City, string CodeCountry)
         {
             var personas = _personaRepository.GetBySearch(City, CodeCountry);
@@ -82,6 +83,8 @@ namespace Api.CRUDPersonas.Controllers
         /// <response code="201">Registro creado</response>
         /// <response code="400">Solicitud incorrecta</response>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Persona))]
+
         public IActionResult Post(PersonaRequest req)
         {
             var persona = _personaRepository.Create(
@@ -107,6 +110,7 @@ namespace Api.CRUDPersonas.Controllers
         /// <response code="404">Registro no encontrado</response>
         [HttpPut]
         [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Persona))]
         public IActionResult Put(Guid id, PersonaRequest req)
         {
             var persona = _personaRepository.Update(
